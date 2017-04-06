@@ -1,4 +1,10 @@
 <h1>create an article</h1>	
+<% if @article.errors.any? %>
+<ul>
+<% @article.errors.full_messages each do |msg| %>
+<li> <%= msg%> </li>
+</ul>
+<% end %>
 
 <%= form_for @article do |k|%>
 <p>
